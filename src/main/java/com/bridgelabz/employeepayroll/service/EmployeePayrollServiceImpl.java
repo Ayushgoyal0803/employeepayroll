@@ -44,6 +44,7 @@ public class EmployeePayrollServiceImpl implements EmployeePayrollService {
         Optional<Employee> optionalEmployee = employeeRepository.findByName(employeeDTO.name);
         if(optionalEmployee.isPresent()) {
             Employee updatedEmployee = optionalEmployee.get();
+            updatedEmployee.updateEmployeeData(employeeDTO);
             employeeRepository.save(updatedEmployee);
 
             return new ResponseDTO("Employee data updated successfully", HttpStatus.OK, updatedEmployee);
@@ -62,7 +63,7 @@ public class EmployeePayrollServiceImpl implements EmployeePayrollService {
 
             employeeRepository.delete(deletedEmployee);
 
-            return new ResponseDTO("Employee deleted successfully", HttpStatus.OK, deletedEmployee);
+            return new ResponseDTO("Employee deleted successfully", HttpStatus.OK,employeeId);
         } else {
             return new ResponseDTO("Employee not found", HttpStatus.NOT_FOUND, null);
         }

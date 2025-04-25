@@ -10,6 +10,7 @@ import java.util.List;
 
 
 @ToString
+@Data
 public class EmployeeDTO {
     @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$",
             message = "Employee name Invalid")
@@ -34,31 +35,5 @@ public class EmployeeDTO {
 
     @NotNull(message = "Department should not be empty")
     public List<String> department;
-
-
-//    public EmployeeDTO(String name, double salary ){
-//        this.salary = salary;
-//        this.name = name;
-//    }
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public double getSalary() {
-//        return salary;
-//    }
-//
-//    public void setSalary(double salary) {
-//        this.salary = salary;
-//    }
-//
-//    @Override
-//    public String toString(){
-//        return "name: " + name + "\nsalary: " + salary;
-//    }
 
 }

@@ -34,7 +34,7 @@ public class Employee {
         this.updateEmployeeData(employeeDTO);
     }
 
-    private void updateEmployeeData(EmployeeDTO employeeDTO) {
+    public void updateEmployeeData(EmployeeDTO employeeDTO) {
         this.name = employeeDTO.name;
         this.salary = employeeDTO.salary;
         this.gender = employeeDTO.gender;
@@ -42,31 +42,7 @@ public class Employee {
         this.note = employeeDTO.note;
         this.profilePic = employeeDTO.profilePic;
         this.department = new ArrayList<>(employeeDTO.department);
-
     }
-//
-//    public void setEmployeeId(int employeeId) {
-//        this.employeeId = employeeId;
-//    }
-//
-//    public int getEmployeeId() {
-//        return employeeId;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setSalary(double salary) {
-//        this.salary = salary;
-//    }
-//
-//    public double getSalary() {
-//        return salary;
-//    }
+
 }
 
